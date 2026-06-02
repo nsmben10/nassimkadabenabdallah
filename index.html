@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Développeur Full-Stack</title>
+
+  <!-- Google Fonts : Syne (display) + DM Mono (code/accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Feuille de style principale -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       CURSEUR PERSONNALISÉ
+  ═══════════════════════════════════════════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       BARRE DE NAVIGATION FIXE
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+      <!-- Logo / Marque -->
+      <a href="#hero" class="nav-logo" aria-label="Accueil">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Alex<span class="logo-accent">.</span>Dev</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Liens de navigation desktop -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about"      class="nav-link" data-index="01">À Propos</a></li>
+        <li><a href="#skills"     class="nav-link" data-index="02">Compétences</a></li>
+        <li><a href="#projects"   class="nav-link" data-index="03">Projets</a></li>
+        <li><a href="#contact"    class="nav-link" data-index="04">Contact</a></li>
+      </ul>
+
+      <!-- Bouton hamburger mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Introduction">
+
+    <!-- Grille décorative d'arrière-plan -->
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <!-- Orbes lumineux -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <!-- Badge disponibilité -->
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Disponible pour de nouvelles opportunités
+      </div>
+
+      <!-- Titre principal -->
+      <h1 class="hero-title reveal">
+        <span class="title-line">Bonjour, je suis</span>
+        <span class="title-name">Alexandre <span class="name-accent">Martin</span></span>
+      </h1>
+
+      <!-- Typing effect -->
+      <p class="hero-subtitle reveal">
+        <span class="subtitle-prefix">Je suis &nbsp;</span>
+        <span class="typing-wrapper">
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor" aria-hidden="true">|</span>
+        </span>
+      </p>
+
+      <!-- Description courte -->
+      <p class="hero-desc reveal">
+        Passionné par l'architecture web moderne, la performance et l'automatisation.
+        Je transforme des idées complexes en expériences numériques élégantes.
+      </p>
+
+      <!-- Boutons CTA -->
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+          Voir mes projets
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          Me contacter
+        </a>
+      </div>
+
+      <!-- Stats rapides -->
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-target="42">0</span>
+          <span class="stat-label">Projets livrés</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="5">0</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="18">0</span>
+          <span class="stat-label">Technologies maîtrisées</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicateur de défilement -->
+    <a href="#about" class="scroll-indicator reveal" aria-label="Défiler vers À Propos">
+      <span class="scroll-text">Défiler</span>
+      <span class="scroll-arrow" aria-hidden="true">
+        <i class="fa-solid fa-chevron-down"></i>
+      </span>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION À PROPOS
+  ═══════════════════════════════════════════════ -->
+  <section id="about" class="section about" aria-labelledby="about-title">
+    <div class="container">
+
+      <!-- En-tête de section -->
+      <div class="section-header reveal">
+        <span class="section-tag">// 01. À propos</span>
+        <h2 class="section-title" id="about-title">Qui suis-je ?</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Photo / Avatar -->
+        <div class="about-visual reveal">
+          <div class="avatar-frame">
+            <div class="avatar-inner">
+              <!-- Initiales en guise d'avatar -->
+              <span class="avatar-initials">AM</span>
+            </div>
+            <div class="avatar-ring ring-1" aria-hidden="true"></div>
+            <div class="avatar-ring ring-2" aria-hidden="true"></div>
+            <!-- Badge flottant -->
+            <div class="avatar-badge" aria-hidden="true">
+              <i class="fa-solid fa-code"></i>
+            </div>
+          </div>
+          <!-- Détails flottants -->
+          <div class="about-card float-card reveal">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Paris, France</span>
+          </div>
+        </div>
+
+        <!-- Texte -->
+        <div class="about-text reveal">
+          <p class="about-intro">
+            Développeur <strong>Full-Stack</strong> avec 5 ans d'expérience dans la conception
+            d'applications web performantes et d'architectures cloud robustes.
+          </p>
+          <p>
+            Mon approche combine une rigueur technique solide avec un souci constant
+            de l'expérience utilisateur. J'aime construire des systèmes qui tiennent
+            la route à grande échelle, tout en restant maintenables et lisibles.
+          </p>
+          <p>
+            En dehors du code, je contribue à des projets open source, je rédige des
+            articles techniques et je participe régulièrement à des hackathons.
+          </p>
+
+          <!-- Informations clés -->
+          <ul class="about-facts" role="list">
+            <li>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              Master Informatique — Université Paris-Saclay
+            </li>
+            <li>
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+              Lead Developer chez TechCorp (2021–présent)
+            </li>
+            <li>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              +1 200 contributions GitHub cette année
+            </li>
+            <li>
+              <i class="fa-solid fa-language" aria-hidden="true"></i>
+              Français (natif), Anglais (C1), Arabe (courant)
+            </li>
+          </ul>
+
+          <!-- Bouton CV -->
+          <a href="#" class="btn btn-primary" download aria-label="Télécharger mon CV PDF">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Télécharger mon CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION COMPÉTENCES
+  ═══════════════════════════════════════════════ -->
+  <section id="skills" class="section skills" aria-labelledby="skills-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 02. Compétences</span>
+        <h2 class="section-title" id="skills-title">Mon arsenal technique</h2>
+      </div>
+
+      <!-- Grille de catégories -->
+      <div class="skills-grid">
+
+        <!-- Catégorie 1 : Développement Web -->
+        <article class="skill-card reveal" aria-label="Développement Web">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </div>
+            <h3>Développement Web</h3>
+          </div>
+          <ul class="skill-tags" role="list">
+            <li class="tag tag-primary">React</li>
+            <li class="tag tag-primary">Next.js</li>
+            <li class="tag tag-secondary">Vue.js</li>
+            <li class="tag tag-secondary">TypeScript</li>
+            <li class="tag tag-accent">Node.js</li>
+            <li class="tag tag-accent">Express</li>
+            <li class="tag tag-accent">GraphQL</li>
+            <li class="tag tag-neutral">HTML5 / CSS3</li>
+          </ul>
+          <div class="skill-level">
+            <span class="level-label">Niveau</span>
+            <div class="level-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+              <div class="level-fill" data-width="92"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Catégorie 2 : Infrastructure & Réseaux -->
+        <article class="skill-card reveal" aria-label="Infrastructure et Réseaux">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <i class="fa-solid fa-server" aria-hidden="true"></i>
+            </div>
+            <h3>Infrastructure & Réseaux</h3>
+          </div>
+          <ul class="skill-tags" role="list">
+            <li class="tag tag-primary">Docker</li>
+            <li class="tag tag-primary">Kubernetes</li>
+            <li class="tag tag-secondary">AWS</li>
+            <li class="tag tag-secondary">GCP</li>
+            <li class="tag tag-accent">Nginx</li>
+            <li class="tag tag-accent">Linux</li>
+            <li class="tag tag-neutral">CI/CD</li>
+            <li class="tag tag-neutral">Terraform</li>
+          </ul>
+          <div class="skill-level">
+            <span class="level-label">Niveau</span>
+            <div class="level-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+              <div class="level-fill" data-width="78"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Catégorie 3 : Automatisation & IA -->
+        <article class="skill-card reveal" aria-label="Automatisation et IA">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            </div>
+            <h3>Automatisation & IA</h3>
+          </div>
+          <ul class="skill-tags" role="list">
+            <li class="tag tag-primary">Python</li>
+            <li class="tag tag-primary">FastAPI</li>
+            <li class="tag tag-secondary">LangChain</li>
+            <li class="tag tag-secondary">OpenAI API</li>
+            <li class="tag tag-accent">Selenium</li>
+            <li class="tag tag-accent">Scrapy</li>
+            <li class="tag tag-neutral">GitHub Actions</li>
+            <li class="tag tag-neutral">Ansible</li>
+          </ul>
+          <div class="skill-level">
+            <span class="level-label">Niveau</span>
+            <div class="level-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <div class="level-fill" data-width="85"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Catégorie 4 : Bases de données -->
+        <article class="skill-card reveal" aria-label="Bases de données">
+          <div class="skill-card-header">
+            <div class="skill-icon">
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
+            </div>
+            <h3>Bases de données</h3>
+          </div>
+          <ul class="skill-tags" role="list">
+            <li class="tag tag-primary">PostgreSQL</li>
+            <li class="tag tag-primary">MongoDB</li>
+            <li class="tag tag-secondary">Redis</li>
+            <li class="tag tag-secondary">MySQL</li>
+            <li class="tag tag-accent">Prisma</li>
+            <li class="tag tag-accent">Elasticsearch</li>
+            <li class="tag tag-neutral">Supabase</li>
+          </ul>
+          <div class="skill-level">
+            <span class="level-label">Niveau</span>
+            <div class="level-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+              <div class="level-fill" data-width="88"></div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION PROJETS
+  ═══════════════════════════════════════════════ -->
+  <section id="projects" class="section projects" aria-labelledby="projects-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 03. Projets</span>
+        <h2 class="section-title" id="projects-title">Ce que j'ai construit</h2>
+      </div>
+
+      <!-- Filtres -->
+      <div class="projects-filters reveal" role="tablist" aria-label="Filtrer les projets">
+        <button class="filter-btn active" data-filter="all"   role="tab" aria-selected="true">Tous</button>
+        <button class="filter-btn"        data-filter="web"   role="tab" aria-selected="false">Web</button>
+        <button class="filter-btn"        data-filter="infra" role="tab" aria-selected="false">Infra</button>
+        <button class="filter-btn"        data-filter="ai"    role="tab" aria-selected="false">IA / Auto</button>
+      </div>
+
+      <!-- Grille de projets -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Projet 1 -->
+        <article class="project-card reveal" data-category="web" aria-label="Projet SaaS Dashboard">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la démo live">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">01</span>
+              <span class="project-category-badge">Web App</span>
+            </div>
+            <h3 class="project-title">SaaS Analytics Dashboard</h3>
+            <p class="project-desc">
+              Tableau de bord analytique en temps réel pour PME. Visualisation de KPIs,
+              rapports automatisés et alertes intelligentes.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">React</li>
+              <li class="tag tag-secondary">Node.js</li>
+              <li class="tag tag-accent">PostgreSQL</li>
+              <li class="tag tag-neutral">Docker</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projet 2 -->
+        <article class="project-card reveal project-featured" data-category="ai" aria-label="Projet AI Assistant">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la démo live">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">02</span>
+              <span class="project-category-badge">IA</span>
+            </div>
+            <h3 class="project-title">AI Document Assistant</h3>
+            <p class="project-desc">
+              Assistant IA capable de lire, résumer et répondre à des questions
+              sur des documents PDF/Word via RAG et LangChain.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">Python</li>
+              <li class="tag tag-secondary">LangChain</li>
+              <li class="tag tag-accent">FastAPI</li>
+              <li class="tag tag-neutral">OpenAI</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projet 3 -->
+        <article class="project-card reveal" data-category="infra" aria-label="Projet Infrastructure CI/CD">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la documentation">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">03</span>
+              <span class="project-category-badge">Infra</span>
+            </div>
+            <h3 class="project-title">Pipeline CI/CD Automatisé</h3>
+            <p class="project-desc">
+              Infrastructure as Code complète avec déploiements automatisés,
+              monitoring Grafana et rollback instantané.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">Kubernetes</li>
+              <li class="tag tag-secondary">Terraform</li>
+              <li class="tag tag-accent">GitHub Actions</li>
+              <li class="tag tag-neutral">Grafana</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projet 4 -->
+        <article class="project-card reveal" data-category="web" aria-label="Projet E-Commerce">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la démo live">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">04</span>
+              <span class="project-category-badge">E-Commerce</span>
+            </div>
+            <h3 class="project-title">E-Commerce Next.js</h3>
+            <p class="project-desc">
+              Boutique en ligne performante avec SSR, paiement Stripe intégré,
+              gestion des stocks et interface d'administration.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">Next.js</li>
+              <li class="tag tag-secondary">Stripe</li>
+              <li class="tag tag-accent">Prisma</li>
+              <li class="tag tag-neutral">Vercel</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projet 5 -->
+        <article class="project-card reveal" data-category="ai" aria-label="Projet Bot Automatisation">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la démo live">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">05</span>
+              <span class="project-category-badge">Automatisation</span>
+            </div>
+            <h3 class="project-title">Bot de Veille Technologique</h3>
+            <p class="project-desc">
+              Agrégateur intelligent qui scrape, résume et envoie des newsletters
+              personnalisées sur les dernières actualités tech.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">Python</li>
+              <li class="tag tag-secondary">Scrapy</li>
+              <li class="tag tag-accent">OpenAI</li>
+              <li class="tag tag-neutral">Redis</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projet 6 -->
+        <article class="project-card reveal" data-category="infra" aria-label="Projet Monitoring Stack">
+          <div class="project-image" aria-hidden="true">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Voir la documentation">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Voir le code source sur GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-number">06</span>
+              <span class="project-category-badge">Infra</span>
+            </div>
+            <h3 class="project-title">Stack de Monitoring Sécurisé</h3>
+            <p class="project-desc">
+              Solution de monitoring complète avec détection d'intrusion,
+              alertes Slack/email et tableaux de bord Kibana.
+            </p>
+            <ul class="project-tags" role="list">
+              <li class="tag tag-primary">Elasticsearch</li>
+              <li class="tag tag-secondary">Kibana</li>
+              <li class="tag tag-accent">Logstash</li>
+              <li class="tag tag-neutral">Docker</li>
+            </ul>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION CONTACT
+  ═══════════════════════════════════════════════ -->
+  <section id="contact" class="section contact" aria-labelledby="contact-title">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 04. Contact</span>
+        <h2 class="section-title" id="contact-title">Travaillons ensemble</h2>
+        <p class="section-desc reveal">
+          Un projet en tête ? Une question ? N'hésitez pas à me contacter,
+          je réponds généralement sous 24h.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Formulaire -->
+        <div class="contact-form-wrapper reveal">
+          <div class="form-glow" aria-hidden="true"></div>
+          <div class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Nom complet</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user input-icon" aria-hidden="true"></i>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Jean Dupont"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope input-icon" aria-hidden="true"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="jean@exemple.com"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Sujet</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-tag input-icon" aria-hidden="true"></i>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="Proposition de projet"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="subjectError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="fa-solid fa-message input-icon input-icon-top" aria-hidden="true"></i>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input form-textarea"
+                  placeholder="Décrivez votre projet ou votre demande..."
+                  rows="5"
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-full" id="submitBtn" onclick="handleFormSubmit()">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              <span id="submitBtnText">Envoyer le message</span>
+            </button>
+
+            <!-- Message de confirmation -->
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              Message envoyé ! Je vous répondrai bientôt.
+            </div>
+          </div>
+        </div>
+
+        <!-- Infos de contact -->
+        <div class="contact-info reveal">
+          <h3 class="contact-info-title">Retrouvez-moi sur</h3>
+
+          <ul class="contact-links" role="list">
+            <li>
+              <a href="mailto:alexandre@example.com" class="contact-link-item" aria-label="Envoyer un email">
+                <div class="contact-link-icon">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="contact-link-details">
+                  <span class="contact-link-label">Email</span>
+                  <span class="contact-link-value">alexandre@example.com</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link-item" aria-label="Profil LinkedIn">
+                <div class="contact-link-icon">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </div>
+                <div class="contact-link-details">
+                  <span class="contact-link-label">LinkedIn</span>
+                  <span class="contact-link-value">linkedin.com/in/alexandre</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link-item" aria-label="Profil GitHub">
+                <div class="contact-link-icon">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </div>
+                <div class="contact-link-details">
+                  <span class="contact-link-label">GitHub</span>
+                  <span class="contact-link-value">github.com/alexandre</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-link-item" aria-label="Profil Twitter / X">
+                <div class="contact-link-icon">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </div>
+                <div class="contact-link-details">
+                  <span class="contact-link-label">Twitter / X</span>
+                  <span class="contact-link-value">@alexandre_dev</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square contact-link-arrow" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Disponibilité -->
+          <div class="availability-card">
+            <div class="availability-header">
+              <span class="availability-dot"></span>
+              <span>Actuellement disponible</span>
+            </div>
+            <p>Ouvert aux opportunités en freelance, CDI ou collaborations sur des projets innovants.</p>
+          </div>
+        </div>
+
+      </div><!-- /contact-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          &copy; <span id="currentYear"></span> Alexandre Martin. Conçu &amp; développé avec
+          <i class="fa-solid fa-heart footer-heart" aria-label="amour" aria-hidden="true"></i>
+        </p>
+        <p class="footer-sub">
+          <span class="dm-mono">v2.0.0</span> — Fait sur Terre 🌍
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
